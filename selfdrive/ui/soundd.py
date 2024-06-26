@@ -82,7 +82,7 @@ class Soundd:
 
     ret = np.zeros(frames, dtype=np.float32)
 
-    if self.current_alert != AudibleAlert.none:
+    if self.current_alert != AudibleAlert.none and self.current_alert != AudibleAlert.engage and self.current_alert != AudibleAlert.disengage:
       num_loops = sound_list[self.current_alert][1]
       sound_data = self.loaded_sounds[self.current_alert]
       written_frames = 0
